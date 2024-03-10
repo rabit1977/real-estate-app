@@ -1,0 +1,52 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  align-items: center;
+
+  .link:hover, .logo:hover {
+    transition: all 0.1s ease;
+      scale: 1.05;
+  }
+
+  /* navbar left side */
+  .left {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+
+    .logo {
+      font-weight: bold;
+      font-size: 10px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+
+      .logoTitle {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  /* navbar right side */
+  .right {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #fcf5f3;
+    height: 100%;
+
+    .login {
+      padding: 12px 24px;
+      margin: 20px;
+    }
+
+    .register {
+      background-color: #fece51;
+      padding: 12px 24px;
+      margin: 20px;
+    }
+  }
+}

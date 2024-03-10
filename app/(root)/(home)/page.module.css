@@ -1,0 +1,29 @@
+.layout {
+  height: 100vh;
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* media screens  */
+/* To ensure proper behavior, it’s essential to add media queries from the largest screen size down to the smallest screen size. 🙌*/
+
+@media screen and (max-width: 1366px) {
+  .layout {
+    background-color: coral;
+    max-width: 1280px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .layout {
+    background-color: cornflowerblue;
+    max-width: 768px;
+  }
+}
+
+@media screen and (max-width: 738px) {
+  .layout {
+    background-color: red;
+    max-width: 640px;
+  }
+}
