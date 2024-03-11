@@ -3,10 +3,24 @@
   justify-content: space-between;
   height: 100px;
   align-items: center;
-
-  .link:hover, .logo:hover {
+  /* Parent styles for .logo and .link */
+  .logo,
+  .link {
     transition: all 0.1s ease;
-      scale: 1.05;
+    /* Hide .link on screens with a maximum width of 738px */
+    @media (max-width: 1024px) and (min-width: 728px) {
+      & .logoTitle {
+        display: none;
+      }
+    }
+    @media (max-width: 738px) {
+      display: none;
+    }
+  }
+
+  .logo:hover,
+  .link:hover {
+    transform: scale(1.05);
   }
 
   /* navbar left side */
@@ -15,6 +29,7 @@
     display: flex;
     align-items: center;
     gap: 50px;
+    padding-left: 1rem;
 
     .logo {
       font-weight: bold;
@@ -37,16 +52,63 @@
     justify-content: flex-end;
     background-color: #fcf5f3;
     height: 100%;
+    @media (max-width: 738px) {
+      background-color: transparent;
+    }
 
     .login {
       padding: 12px 24px;
       margin: 20px;
+      @media (max-width: 738px) {
+        display: none;
+      }
     }
 
     .register {
       background-color: #fece51;
       padding: 12px 24px;
       margin: 20px;
+      @media (max-width: 738px) {
+        display: none;
+      }
+    }
+    .menuIcon {
+      z-index: 999;
+      display: none;
+      padding-right: 1rem;
+      .img {
+        cursor: pointer;
+      }
+      @media (max-width: 738px) {
+        display: initial;
+      }
+    }
+    .menu {
+      position: absolute;
+      top: 0;
+      right: -50%;
+      background-color: black;
+      height: 100vh;
+      width: 50%;
+      color: white;
+      transition: all 0.5s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      gap: 3.5rem;
+      &.active {
+        right: 0;
+      }
+
+      .login,
+      .register,
+      .link {
+        @media (max-width: 738px) {
+          display: initial;
+        }
+      }
     }
   }
 }
